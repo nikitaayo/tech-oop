@@ -13,6 +13,7 @@ def main():
 
     print('Filled container')
 
+    container.sort()
     output_file = open(sys.argv[2], "w")
     container.write_to(output_file)
 
