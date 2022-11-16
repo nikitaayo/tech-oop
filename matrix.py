@@ -34,6 +34,9 @@ class Matrix:
         matrix.read_from(stream)
         return matrix
 
+    def write_two_dim_array_to(self, stream):
+        pass
+
 
 class TwoDimArray(Matrix):
     def __init__(self):
@@ -52,6 +55,9 @@ class TwoDimArray(Matrix):
             stream.write(f'\t\t{row}\n')
         stream.write(f'\tSum: {self.sum()}\n')
         super().write_to(stream)
+
+    def write_two_dim_array_to(self, stream):
+        self.write_to(stream)
 
 
 class Diagonal(Matrix):
