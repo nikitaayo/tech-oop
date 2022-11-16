@@ -8,15 +8,6 @@ class Matrix:
     def write_to(self, stream):
         stream.write(f'\tSize: {self.size}\n')
 
-    def sum(self):
-        s = 0
-        for item in self.data:
-            if isinstance(item, int):
-                s += item
-            else:
-                s += sum(item)
-        return s
-
     @staticmethod
     def create_from(stream, line):
         k = int(line)
@@ -36,6 +27,18 @@ class Matrix:
 
     def write_two_dim_array_to(self, stream):
         pass
+
+    def sum(self):
+        s = 0
+        for item in self.data:
+            if isinstance(item, int):
+                s += item
+            else:
+                s += sum(item)
+        return s
+
+    def compare(self, other):
+        return self.sum() < other.sum()
 
 
 class TwoDimArray(Matrix):
